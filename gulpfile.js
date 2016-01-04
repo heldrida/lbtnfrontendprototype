@@ -3,6 +3,7 @@ var browserSync = require('browser-sync').create();
 var browserify = require('browserify');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
+var source = require('vinyl-source-stream');
 
 gulp.task('sass', function () {
 	return gulp.src('src/sass/**/*.scss')

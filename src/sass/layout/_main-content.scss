@@ -1,0 +1,9 @@
+.ns-clv4 {
+	main {
+		margin-top: $header-height;
+		background: #000;
+		width: 100%;
+		height: calc(100vh - #{$header-height});
+		overflow: hidden;
+	}
+}
