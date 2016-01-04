@@ -1,0 +1,18 @@
+{
+  "name": "lbtn_v4",
+  "version": "0.0.1",
+  "description": "Christian Louboutin's V4 Frontend Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "La Moulade",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.0",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.1"
+  }
+}
