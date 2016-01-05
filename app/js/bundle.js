@@ -19,20 +19,27 @@ console.log('navbarjs loaded!');
 
 	var header = document.querySelector('header'),
 		header_height      = getComputedStyle(header).height.split('px')[0],
-		fixedClassName = 'minimize';
+		fixedClassName = 'minimize',
+		headerLogo = document.querySelector('.header-logo');
 
 	function stickyScroll(e) {
 		if( window.pageYOffset > (header_height) / 2 ) {
-			header.classList.add(fixedClassName);
+			TweenLite.to(headerLogo, 0.3, { scale: 0, onComplete: function () {
+					header.classList.add(fixedClassName);
+				}
+			});
 		}
 
 		if( window.pageYOffset < (header_height) / 2 ) {
-			header.classList.remove(fixedClassName);
+			TweenLite.to(headerLogo, 0.3, { scale: 1, onComplete: function () {
+					header.classList.remove(fixedClassName);
+				}
+			});
 		}
 	}
 
 	// Scroll handler to toggle classes.
-	window.addEventListener('scroll', stickyScroll, false);
+	window.addEventListener('scroll', _.throttle(stickyScroll, 100), false);
 
 }());
 },{}],5:[function(require,module,exports){

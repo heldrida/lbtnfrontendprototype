@@ -5,7 +5,6 @@
 		.header-logo {
 			width: $header-logo-height;
 			height: $header-logo-height;
-			@include transition(all 0.3s);
 		}
 
 		&.minimize {

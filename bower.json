@@ -18,7 +18,9 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "gsap": "tweenlite-css#~1.11.5"
+  "dependencies": false,
+  "devDependencies": {
+    "gsap": "~1.18.2",
+    "lodash": "~3.10.1"
   }
 }

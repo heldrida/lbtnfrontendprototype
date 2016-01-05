@@ -89,13 +89,7 @@ table {
   transition: all 0.3s; }
   .ns-clv4 header .header-logo {
     width: 104px;
-    height: 104px;
-    -webkit-transition: all 0.3s;
-    -khtml-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s; }
+    height: 104px; }
   .ns-clv4 header.minimize {
     height: 35px; }
   .ns-clv4 header nav {
