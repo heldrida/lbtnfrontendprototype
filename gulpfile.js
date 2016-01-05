@@ -13,11 +13,11 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function () {
-	gulp.watch('./src/js/*.js', ['browserify']);
+	gulp.watch('./src/js/**/*.js', ['browserify']);
 	gulp.watch('./src/sass/**/*.scss', ['sass']);
 	gulp.watch('./app/css/*.css', ['reload']);
 	gulp.watch("./app/index.html", ['reload']);
-	gulp.watch("./app/js/*js", ['reload']);
+	gulp.watch("./app/js/**/*.js", ['reload']);
 });
 
 gulp.task('browserify', function () {

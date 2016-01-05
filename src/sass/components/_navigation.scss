@@ -1,0 +1,32 @@
+.ns-clv4 {
+	header {
+		nav {
+			text-align: center;
+
+			ul {
+				display: inline-block;
+
+				li {
+					float: left;
+					text-transform: uppercase;
+					margin: 0 12px;
+
+					span {
+						font-family: 'Gill Sans';
+						position: relative;
+						top: 44px;
+						font-size: $font-nav-main-opt-sz;
+						letter-spacing: $font-nav-main-opt-sz * 0.1255;
+						line-height: $font-nav-main-opt-sz * 1.1825;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		.header-logo {
+			width: $header-logo-height;
+			height: $header-logo-height;
+		}
+	}
+}

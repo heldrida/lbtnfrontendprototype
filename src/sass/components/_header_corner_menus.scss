@@ -1,0 +1,23 @@
+.ns-clv4 {
+	header {
+		.tm {
+			position: absolute;
+			top: 0;
+
+			ul {
+				li {
+					float: left;
+					color: $header-text-grey-lt;
+				}
+			}
+
+			&.tl {
+				left: 0;
+			}
+
+			&.tr {
+				right: 0;
+			}
+		}
+	}
+}
