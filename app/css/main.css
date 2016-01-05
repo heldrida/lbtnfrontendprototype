@@ -80,26 +80,40 @@ table {
   height: calc(300vh - 90px);
   overflow: hidden; }
 
-.ns-clv4 header nav {
-  text-align: center; }
-  .ns-clv4 header nav ul {
-    display: inline-block; }
-    .ns-clv4 header nav ul li {
-      float: left;
-      text-transform: uppercase;
-      margin: 0 12px; }
-      .ns-clv4 header nav ul li span {
-        font-family: 'Gill Sans';
-        position: relative;
-        top: 44px;
-        font-size: 11px;
-        letter-spacing: 1.3805px;
-        line-height: 13.0075px;
-        cursor: pointer; }
-
-.ns-clv4 header .header-logo {
-  width: 104px;
-  height: 104px; }
+.ns-clv4 header {
+  -webkit-transition: all 0.3s;
+  -khtml-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .ns-clv4 header .header-logo {
+    width: 104px;
+    height: 104px;
+    -webkit-transition: all 0.3s;
+    -khtml-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+  .ns-clv4 header.minimize {
+    height: 35px; }
+  .ns-clv4 header nav {
+    text-align: center; }
+    .ns-clv4 header nav ul {
+      display: inline-block; }
+      .ns-clv4 header nav ul li {
+        float: left;
+        text-transform: uppercase;
+        margin: 0 12px; }
+        .ns-clv4 header nav ul li span {
+          font-family: 'Gill Sans';
+          position: relative;
+          top: 44px;
+          font-size: 11px;
+          letter-spacing: 1.3805px;
+          line-height: 13.0075px;
+          cursor: pointer; }
 
 .ns-clv4 header .tm {
   position: absolute;

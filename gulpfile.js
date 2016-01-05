@@ -35,7 +35,10 @@ gulp.task('serve', ['watch'], function () {
 
 	browserSync.init({
 		server: {
-			baseDir: "./app"
+			baseDir: "./app",
+			routes: {
+				"/bower_components": "./bower_components"
+			}
 		}
 	});
 
