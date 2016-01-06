@@ -4,6 +4,10 @@ var browserify = require('browserify');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
+var bowerSrc = require('gulp-bower-src');
+var htmlReplace = require('gulp-html-replace');
+var replace = require('gulp-replace');
+var gulpFilter = require('gulp-filter');
 
 gulp.task('sass', function () {
 	return gulp.src('src/sass/**/*.scss')
@@ -42,6 +46,17 @@ gulp.task('serve', ['watch'], function () {
 		}
 	});
 
+});
+
+// distribution
+gulp.task('dist', ['bowerSrc'], function() {
+	gulp.src('./app/**/*')
+		.pipe(gulp.dest('./dist'));
+});
+
+gulp.task('bowerSrc', function () {
+	bowerSrc()
+		.pipe(gulp.dest('./dist/bower_components'));
 });
 
 gulp.task('default', ['serve']);
