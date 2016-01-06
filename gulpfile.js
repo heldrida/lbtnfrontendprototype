@@ -48,15 +48,15 @@ gulp.task('serve', ['watch'], function () {
 
 });
 
-// distribution
-gulp.task('dist', ['bowerSrc'], function() {
+// build
+gulp.task('build', ['bowerSrc'], function() {
 	gulp.src('./app/**/*')
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./build'));
 });
 
 gulp.task('bowerSrc', function () {
 	bowerSrc()
-		.pipe(gulp.dest('./dist/bower_components'));
+		.pipe(gulp.dest('./build/bower_components'));
 });
 
 gulp.task('default', ['serve']);
