@@ -32,7 +32,7 @@ console.log('navbarjs loaded!');
 		tlPos = 0;
 		tl.to(headerLogo, 0.3, { scale: 0 }, tlPos);
 		tl.to(nav, 0.3, { css: { y: '20px' }}, tlPos);
-		tl.to(header, 0.3, { top: '-50px' }, tlPos);
+		tl.to(header, 0.3, { css: { y: '-50px' }}, tlPos);
 	}
 
 	// Scroll handler to toggle classes.
