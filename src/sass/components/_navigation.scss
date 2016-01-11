@@ -1,6 +1,6 @@
 .ns-clv4 {
 	header {
-		@include transition(all 0.3s);
+		@include transition(all 0.3s ease-in-out);
 
 		.header-logo {
 			width: $header-logo-height;
@@ -8,16 +8,27 @@
 		}
 
 		&.minimize {
-			height: $header-height-min;
+			top: -50px;
+			//@include transform(translateY(-50px));
+
+			nav ul li.logo {
+				@include transform(scale(0));
+			}
+
+			nav {
+				@include transform(translateY(20px));
+			}
 		}
 
 		nav {
 			text-align: center;
+			@include transition(transform 0.3s ease-in-out);
 
 			ul {
 				display: inline-block;
 
 				li {
+					position: relative;
 					float: left;
 					text-transform: uppercase;
 					margin: 0 12px;
@@ -30,6 +41,12 @@
 						letter-spacing: $font-nav-main-opt-sz * 0.1255;
 						line-height: $font-nav-main-opt-sz * 1.1825;
 						cursor: pointer;
+						@include transition(top 0.3s);
+					}
+
+					&.logo {
+						position: relative;
+						@include transition(transform 0.3s);
 					}
 				}
 			}

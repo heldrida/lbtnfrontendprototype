@@ -9,20 +9,22 @@ console.log('navbarjs loaded!');
 
 	function stickyScroll(e) {
 		if( window.pageYOffset > (header_height) / 2 ) {
-
+			/*
 			var tl = new TimelineLite();
 			tl.to(headerLogo, 0.3, { scale: 0 });
 			tl.set(header, { className: '+=' + fixedClassName });
-
+			*/
+			header.classList.add(fixedClassName);
 		}
 
 		if( window.pageYOffset < (header_height) / 2 ) {
-
+			/*
 			var tl = new TimelineLite();
 
 			tl.to(headerLogo, 0.3, { scale: 1 });
-			tl.set(header, { className: '-=' + fixedClassName });
-
+			tl.set(header, { className: '-' + fixedClassName });
+			*/
+			header.classList.remove(fixedClassName);
 		}
 	}
 
