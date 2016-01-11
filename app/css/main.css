@@ -80,69 +80,29 @@ table {
   height: calc(300vh - 90px);
   overflow: hidden; }
 
-.ns-clv4 header {
-  -webkit-transition: all 0.3s ease-in-out;
-  -khtml-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
-  .ns-clv4 header .header-logo {
-    width: 104px;
-    height: 104px; }
-  .ns-clv4 header.minimize {
-    top: -50px; }
-    .ns-clv4 header.minimize nav ul li.logo {
-      -webkit-transform: scale(0);
-      -khtml-transform: scale(0);
-      -moz-transform: scale(0);
-      -ms-transform: scale(0);
-      -o-transform: scale(0);
-      transform: scale(0); }
-    .ns-clv4 header.minimize nav {
-      -webkit-transform: translateY(20px);
-      -khtml-transform: translateY(20px);
-      -moz-transform: translateY(20px);
-      -ms-transform: translateY(20px);
-      -o-transform: translateY(20px);
-      transform: translateY(20px); }
-  .ns-clv4 header nav {
-    text-align: center;
-    -webkit-transition: transform 0.3s ease-in-out;
-    -khtml-transition: transform 0.3s ease-in-out;
-    -moz-transition: transform 0.3s ease-in-out;
-    -ms-transition: transform 0.3s ease-in-out;
-    -o-transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out; }
-    .ns-clv4 header nav ul {
-      display: inline-block; }
-      .ns-clv4 header nav ul li {
+.ns-clv4 header .header-logo {
+  width: 104px;
+  height: 104px; }
+
+.ns-clv4 header nav {
+  text-align: center; }
+  .ns-clv4 header nav ul {
+    display: inline-block; }
+    .ns-clv4 header nav ul li {
+      position: relative;
+      float: left;
+      text-transform: uppercase;
+      margin: 0 12px; }
+      .ns-clv4 header nav ul li span {
+        font-family: 'Gill Sans';
         position: relative;
-        float: left;
-        text-transform: uppercase;
-        margin: 0 12px; }
-        .ns-clv4 header nav ul li span {
-          font-family: 'Gill Sans';
-          position: relative;
-          top: 44px;
-          font-size: 11px;
-          letter-spacing: 1.3805px;
-          line-height: 13.0075px;
-          cursor: pointer;
-          -webkit-transition: top 0.3s;
-          -khtml-transition: top 0.3s;
-          -moz-transition: top 0.3s;
-          -ms-transition: top 0.3s;
-          -o-transition: top 0.3s;
-          transition: top 0.3s; }
-        .ns-clv4 header nav ul li.logo {
-          position: relative;
-          -webkit-transition: transform 0.3s;
-          -khtml-transition: transform 0.3s;
-          -moz-transition: transform 0.3s;
-          -ms-transition: transform 0.3s;
-          -o-transition: transform 0.3s;
-          transition: transform 0.3s; }
+        top: 44px;
+        font-size: 11px;
+        letter-spacing: 1.3805px;
+        line-height: 13.0075px;
+        cursor: pointer; }
+      .ns-clv4 header nav ul li.logo {
+        position: relative; }
 
 .ns-clv4 header .tm {
   position: absolute;

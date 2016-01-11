@@ -5,27 +5,34 @@ console.log('navbarjs loaded!');
 	var header = document.querySelector('header'),
 		header_height = getComputedStyle(header).height.split('px')[0],
 		fixedClassName = 'minimize',
-		headerLogo = document.querySelector('.header-logo');
+		headerLogo = document.querySelector('.header-logo'),
+		nav = document.querySelector('nav'),
+		tl, tlPos;
 
 	function stickyScroll(e) {
 		if( window.pageYOffset > (header_height) / 2 ) {
-			/*
-			var tl = new TimelineLite();
-			tl.to(headerLogo, 0.3, { scale: 0 });
-			tl.set(header, { className: '+=' + fixedClassName });
-			*/
-			header.classList.add(fixedClassName);
+			if (typeof tl === 'undefined') {
+				setTimelineAnim();
+			} else {
+				tl.play();
+			}
 		}
 
 		if( window.pageYOffset < (header_height) / 2 ) {
-			/*
-			var tl = new TimelineLite();
-
-			tl.to(headerLogo, 0.3, { scale: 1 });
-			tl.set(header, { className: '-' + fixedClassName });
-			*/
-			header.classList.remove(fixedClassName);
+			if (typeof tl === 'undefined') {
+				setTimelineAnim();
+			} else {
+				tl.reverse();
+			}
 		}
+	}
+
+	function setTimelineAnim() {
+		tl = new TimelineLite(),
+		tlPos = 0;
+		tl.to(headerLogo, 0.3, { scale: 0 }, tlPos);
+		tl.to(nav, 0.3, { css: { y: '20px' }}, tlPos);
+		tl.to(header, 0.3, { top: '-50px' }, tlPos);
 	}
 
 	// Scroll handler to toggle classes.
