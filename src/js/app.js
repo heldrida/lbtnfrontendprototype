@@ -1,6 +1,19 @@
-/* global window, require */
+/* global window, require, App */
 
 'use strict';
 
-var global = require('./global.js');
-var components = require('./components/all.js');
+(function appInit() {
+
+	// The global App property
+	window.App = window.App || {};
+
+	var Helpers = require('./helpers.js');
+	var Globals = require('./globals.js');
+
+	// Set the helper obj to the App
+	App.helpers = new Helpers();
+
+	// Load components
+	var Components = require('./components/all.js');
+
+}());
