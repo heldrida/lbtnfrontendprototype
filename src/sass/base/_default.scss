@@ -1,0 +1,11 @@
+.ns-clv4 {
+	a {
+		color: $header-text-grey-lt;
+		text-decoration: none;
+		@include transition(opacity 0.3s ease-in);
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
