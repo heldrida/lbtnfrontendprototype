@@ -35,7 +35,10 @@ console.log('navbarjs loaded!');
 		fixedClassName = 'minimize',
 		headerLogo = document.querySelector('.header-logo'),
 		nav = document.querySelector('nav'),
+		topMenuList = header.querySelectorAll('.tm'),
 		tl, tlPos;
+
+		console.log('topMenuList', topMenuList);
 
 	function stickyScroll(e) {
 
@@ -64,13 +67,18 @@ console.log('navbarjs loaded!');
 		tl.to(headerLogo, 0.3, { scale: 0 }, tlPos);
 		tl.to(nav, 0.3, { css: { y: '20px' }}, tlPos);
 		//tl.to(header, 0.3, { css: { y: '-50px' }}, tlPos);
+
+		for (var i = 0; i < topMenuList.length; i++) {
+			tl.to(topMenuList[i], 0.3, { css: { y: '54px' }}, tlPos);
+		}
+
 	}
 
 	function fixNavbar(event) {
 
 		var y = window.pageYOffset,
 			maxY = 55,
-			vendorTransform = App.helpers.transformProp();
+			vendorTransform = Modernizr.prefixed('transform');
 
 		console.log('y', y);
 
@@ -96,20 +104,7 @@ function Helpers() {
 
 }
 
-Helpers.prototype = {
-	transformProp: function() {
-	  var testEl = document.createElement('div');
-	  if(testEl.style.transform == null) {
-	    var vendors = ['Webkit', 'Moz', 'ms'];
-	    for(var vendor in vendors) {
-	      if(testEl.style[ vendors[vendor] + 'Transform' ] !== undefined) {
-	        return vendors[vendor] + 'Transform';
-	      }
-	    }
-	  }
-	  return 'transform';
-	}
-};
+Helpers.prototype = {};
 
 module.exports = Helpers;
 },{}]},{},[1]);
