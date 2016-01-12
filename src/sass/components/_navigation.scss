@@ -1,12 +1,28 @@
 .ns-clv4 {
 	header {
+		text-align: center;
+
 		.header-logo {
 			width: $header-logo-height;
 			height: $header-logo-height;
 		}
 
+		&.minimized {
+			.tl {
+				.opt {
+					//width: $top-corner-menu-ln-height;
+					//height: $top-corner-menu-ln-height;
+
+					> span {
+						opacity: 0;
+					}
+				}
+			}
+		}
+
 		nav {
 			text-align: center;
+			display: inline-block;
 
 			ul {
 				display: inline-block;
@@ -41,6 +57,10 @@
 
 			&.tl {
 				margin-left: $top-corner-menu-margin;
+
+				.opt > span {
+					@include transition(opacity 0.3s linear);
+				}
 
 				li:nth-child(1) {
 					margin-right: $top-corner-menu-margin / 2;

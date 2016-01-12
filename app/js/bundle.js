@@ -36,6 +36,7 @@ console.log('navbarjs loaded!');
 		headerLogo = document.querySelector('.header-logo'),
 		nav = document.querySelector('nav'),
 		topMenuList = header.querySelectorAll('.tm'),
+		topMenuLeftLiList = topMenuList[0].querySelectorAll('li'),
 		navOffset = '20px',
 		topMenuLeftRightOffset = '54px',
 		tl, tlPos;
@@ -62,11 +63,23 @@ console.log('navbarjs loaded!');
 	}
 
 	function setTimelineAnim() {
-		tl = new TimelineLite();
+
+		tl = new TimelineLite({
+			onStart: function () {
+				header.classList.add('minimized');
+			},
+			onReverseComplete: function () {
+				header.classList.remove('minimized');
+			}
+		});
+
 		tlPos = 0;
 		tl.to(headerLogo, 0.3, { scale: 0 }, tlPos);
 		tl.to(nav, 0.3, { css: { y: navOffset }}, tlPos);
-		header.classList.add('minimized');
+
+		for (var y = 0; y < topMenuLeftLiList.length; y++) {
+			tl.to(topMenuLeftLiList[y], 0.2, { css: { width: '16px' } }, 0.2);
+		}
 
 		for (var i = 0; i < topMenuList.length; i++) {
 			tl.to(topMenuList[i], 0.3, { css: { y: topMenuLeftRightOffset }}, tlPos);
