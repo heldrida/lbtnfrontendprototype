@@ -16,5 +16,7 @@
     "html5shiv",
     "setClasses"
   ],
-  "feature-detects": []
+  "feature-detects": [
+    "test/dom/classlist"
+  ]
 }

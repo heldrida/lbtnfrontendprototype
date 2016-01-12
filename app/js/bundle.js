@@ -36,9 +36,9 @@ console.log('navbarjs loaded!');
 		headerLogo = document.querySelector('.header-logo'),
 		nav = document.querySelector('nav'),
 		topMenuList = header.querySelectorAll('.tm'),
+		navOffset = '20px',
+		topMenuLeftRightOffset = '54px',
 		tl, tlPos;
-
-		console.log('topMenuList', topMenuList);
 
 	function stickyScroll(e) {
 
@@ -65,11 +65,10 @@ console.log('navbarjs loaded!');
 		tl = new TimelineLite(),
 		tlPos = 0;
 		tl.to(headerLogo, 0.3, { scale: 0 }, tlPos);
-		tl.to(nav, 0.3, { css: { y: '20px' }}, tlPos);
-		//tl.to(header, 0.3, { css: { y: '-50px' }}, tlPos);
+		tl.to(nav, 0.3, { css: { y: navOffset }}, tlPos);
 
 		for (var i = 0; i < topMenuList.length; i++) {
-			tl.to(topMenuList[i], 0.3, { css: { y: '54px' }}, tlPos);
+			tl.to(topMenuList[i], 0.3, { css: { y: topMenuLeftRightOffset }}, tlPos);
 		}
 
 	}
@@ -79,8 +78,6 @@ console.log('navbarjs loaded!');
 		var y = window.pageYOffset,
 			maxY = 55,
 			vendorTransform = Modernizr.prefixed('transform');
-
-		console.log('y', y);
 
 		if (y < maxY) {
 			header.style[vendorTransform] = 'translateY(' + (-y + 'px') + ')';
