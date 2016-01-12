@@ -19,6 +19,8 @@
 
 					span {
 						font-family: 'Gill Sans';
+						font-weight: 600;
+						font-style: normal;
 						position: relative;
 						top: 44px;
 						font-size: $font-nav-main-opt-sz;
@@ -30,6 +32,25 @@
 					&.logo {
 						position: relative;
 					}
+				}
+			}
+		}
+
+		.tm {
+			.opt {
+				display: inline-block;
+				width: auto;
+				height: $top-corner-menu-ln-height;
+				line-height: $top-corner-menu-ln-height;
+				background-size: 13px;
+				background-position: left top;
+				line-height: 14px;
+				font-family: 'Gill Sans';
+				font-weight: lighter;
+				font-style: normal;
+
+				span {
+					padding-left: 18px;
 				}
 			}
 		}
