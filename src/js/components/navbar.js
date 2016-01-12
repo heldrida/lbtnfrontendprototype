@@ -34,10 +34,11 @@ console.log('navbarjs loaded!');
 	}
 
 	function setTimelineAnim() {
-		tl = new TimelineLite(),
+		tl = new TimelineLite();
 		tlPos = 0;
 		tl.to(headerLogo, 0.3, { scale: 0 }, tlPos);
 		tl.to(nav, 0.3, { css: { y: navOffset }}, tlPos);
+		header.classList.add('minimized');
 
 		for (var i = 0; i < topMenuList.length; i++) {
 			tl.to(topMenuList[i], 0.3, { css: { y: topMenuLeftRightOffset }}, tlPos);
