@@ -43,14 +43,15 @@ console.log('navbarjs loaded!');
 	function fixNavbar(event) {
 
 		var y = window.pageYOffset,
-			maxY = 55;
+			maxY = 55,
+			vendorTransform = App.helpers.transformProp();
 
 		console.log('y', y);
 
 		if (y < maxY) {
-			header.style.transform = 'translateY(' + (-y + 'px') + ')';
+			header.style[vendorTransform] = 'translateY(' + (-y + 'px') + ')';
 		} else {
-			header.style.transform = 'translateY(' + (-maxY) + 'px)';
+			header.style[vendorTransform] = 'translateY(' + (-maxY) + 'px)';
 		}
 
 	}
