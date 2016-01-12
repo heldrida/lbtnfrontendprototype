@@ -89,6 +89,16 @@ table {
   background-repeat: no-repeat;
   background-position: center; }
 
+.ns-clv4 .icon-bag {
+  background-image: url(../img/icon-bag.png?201601121134);
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.ns-clv4 .icon-heart {
+  background-image: url(../img/icon-heart.png?201601121134);
+  background-repeat: no-repeat;
+  background-position: center; }
+
 .ns-clv4 a {
   color: #A9A9A9;
   text-decoration: none;
@@ -100,6 +110,9 @@ table {
   transition: opacity 0.3s ease-in; }
   .ns-clv4 a:hover {
     opacity: 0.8; }
+
+.ns-clv4 .hide {
+  display: none; }
 
 .ns-clv4 header {
   background: #FFF;
@@ -149,9 +162,18 @@ table {
     .ns-clv4 header .tm.tl li:nth-child(1) {
       margin-right: 15px; }
   .ns-clv4 header .tm.tr {
+    height: 16px;
     margin-right: 30px; }
+    .ns-clv4 header .tm.tr ul, .ns-clv4 header .tm.tr li {
+      height: 16px; }
     .ns-clv4 header .tm.tr li:nth-child(2) {
       margin: 0 15px; }
+    .ns-clv4 header .tm.tr li + li > a {
+      width: 16px;
+      height: 16px;
+      background-size: 16px;
+      background-position: center center;
+      line-height: 16px; }
   .ns-clv4 header .tm .opt {
     display: inline-block;
     width: auto;

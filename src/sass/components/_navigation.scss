@@ -48,10 +48,25 @@
 			}
 
 			&.tr {
+				height: $top-corner-right-height;
 				margin-right: $top-corner-menu-margin;
+
+				ul, li {
+					height: $top-corner-right-height;
+				}
 
 				li:nth-child(2) {
 					margin: 0 ($top-corner-menu-margin / 2);
+				}
+
+				li + li {
+					> a {
+						width: $top-corner-right-height;
+						height: $top-corner-right-height;
+						background-size: $top-corner-right-height;
+						background-position: center center;
+						line-height: $top-corner-right-height;
+					}
 				}
 			}
 
