@@ -79,6 +79,11 @@ table {
   font-weight: 600;
   font-style: normal; }
 
+.ns-clv4 .icon-flag_en {
+  background-image: url(../img/icon-flag_en.png?201601121134);
+  background-repeat: no-repeat;
+  background-position: center; }
+
 .ns-clv4 .icon-phone {
   background-image: url(../img/icon-phone.png?201601121134);
   background-repeat: no-repeat;
@@ -147,7 +152,8 @@ table {
   line-height: 14px;
   font-family: 'Gill Sans';
   font-weight: lighter;
-  font-style: normal; }
+  font-style: normal;
+  font-size: 12px; }
   .ns-clv4 header .tm .opt span {
     padding-left: 18px; }
 
