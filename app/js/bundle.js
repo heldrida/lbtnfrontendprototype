@@ -28,7 +28,7 @@ console.log('button.js loaded!');
 },{}],4:[function(require,module,exports){
 console.log('navbarjs loaded!');
 
-(function () {
+(function (App) {
 
 	console.log(App);
 
@@ -71,7 +71,7 @@ console.log('navbarjs loaded!');
 	function fixNavbar(event) {
 
 		var y = window.pageYOffset,
-			maxY = 50;
+			maxY = 55;
 
 		console.log('y', y);
 
@@ -86,11 +86,13 @@ console.log('navbarjs loaded!');
 	// Scroll handler to toggle classes.
 	window.addEventListener('scroll', _.throttle(stickyScroll, 0), false);
 
-}());
+}(window.App));
 },{}],5:[function(require,module,exports){
 console.log('global.js loaded!!');
 
 },{}],6:[function(require,module,exports){
+"use strict";
+
 function Helpers() {
 
 }
