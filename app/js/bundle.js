@@ -30,8 +30,6 @@ console.log('navbarjs loaded!');
 
 (function (App) {
 
-	console.log(App);
-
 	var header = document.querySelector('header'),
 		header_height = getComputedStyle(header).height.split('px')[0],
 		fixedClassName = 'minimize',
