@@ -149,7 +149,14 @@ table {
     transform: translateX(-50%); }
     .ns-clv4 header .header-logo-minimal img {
       width: 30px;
-      height: 35px; }
+      height: 35px;
+      opacity: 0;
+      -webkit-transform: scale(0);
+      -khtml-transform: scale(0);
+      -moz-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0); }
   .ns-clv4 header.minimized .tl .opt > span {
     opacity: 0; }
   .ns-clv4 header nav {

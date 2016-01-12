@@ -6,6 +6,7 @@ console.log('navbarjs loaded!');
 		header_height = getComputedStyle(header).height.split('px')[0],
 		fixedClassName = 'minimize',
 		headerLogo = document.querySelector('.header-logo img'),
+		headerLogoMinimal = document.querySelector('.header-logo-minimal img'),
 		nav = document.querySelector('nav'),
 		topMenuList = header.querySelectorAll('.tm'),
 		topMenuLeftLiList = topMenuList[0].querySelectorAll('li'),
@@ -47,6 +48,7 @@ console.log('navbarjs loaded!');
 
 		tlPos = 0;
 		tl.to(headerLogo, 0.3, { scale: 0 }, tlPos);
+		tl.to(headerLogoMinimal, 0.3, { opacity: 1, scale: 1 }, 0.1);
 		tl.to(nav, 0.3, { css: { y: navOffset }}, tlPos);
 
 		for (var y = 0; y < topMenuLeftLiList.length; y++) {
