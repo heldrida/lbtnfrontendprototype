@@ -3,8 +3,24 @@
 		text-align: center;
 
 		.header-logo {
-			width: $header-logo-height;
-			height: $header-logo-height;
+			img {
+				width: $header-logo-height;
+				height: $header-logo-height;
+			}
+			position: relative;
+			z-index: 2;
+		}
+
+		.header-logo-minimal {
+			position: absolute;
+			z-index: 1;
+			bottom: 24px;
+			@include transform(translateX(-50%));
+
+			img {
+				width: 30px;
+				height: 35px;
+			}
 		}
 
 		&.minimized {

@@ -33,7 +33,7 @@ console.log('navbarjs loaded!');
 	var header = document.querySelector('header'),
 		header_height = getComputedStyle(header).height.split('px')[0],
 		fixedClassName = 'minimize',
-		headerLogo = document.querySelector('.header-logo'),
+		headerLogo = document.querySelector('.header-logo img'),
 		nav = document.querySelector('nav'),
 		topMenuList = header.querySelectorAll('.tm'),
 		topMenuLeftLiList = topMenuList[0].querySelectorAll('li'),

@@ -132,8 +132,24 @@ table {
 .ns-clv4 header {
   text-align: center; }
   .ns-clv4 header .header-logo {
-    width: 104px;
-    height: 104px; }
+    position: relative;
+    z-index: 2; }
+    .ns-clv4 header .header-logo img {
+      width: 104px;
+      height: 104px; }
+  .ns-clv4 header .header-logo-minimal {
+    position: absolute;
+    z-index: 1;
+    bottom: 24px;
+    -webkit-transform: translateX(-50%);
+    -khtml-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    .ns-clv4 header .header-logo-minimal img {
+      width: 30px;
+      height: 35px; }
   .ns-clv4 header.minimized .tl .opt > span {
     opacity: 0; }
   .ns-clv4 header nav {
