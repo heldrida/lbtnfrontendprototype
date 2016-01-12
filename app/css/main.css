@@ -142,20 +142,30 @@ table {
       .ns-clv4 header nav ul li.logo {
         position: relative; }
 
-.ns-clv4 header .tm .opt {
-  display: inline-block;
-  width: auto;
-  height: 14px;
-  line-height: 14px;
-  background-size: 13px;
-  background-position: left top;
-  line-height: 14px;
-  font-family: 'Gill Sans';
-  font-weight: lighter;
-  font-style: normal;
-  font-size: 12px; }
-  .ns-clv4 header .tm .opt span {
-    padding-left: 18px; }
+.ns-clv4 header .tm {
+  margin-top: 10px; }
+  .ns-clv4 header .tm.tl {
+    margin-left: 30px; }
+    .ns-clv4 header .tm.tl li:nth-child(1) {
+      margin-right: 15px; }
+  .ns-clv4 header .tm.tr {
+    margin-right: 30px; }
+    .ns-clv4 header .tm.tr li:nth-child(2) {
+      margin: 0 15px; }
+  .ns-clv4 header .tm .opt {
+    display: inline-block;
+    width: auto;
+    height: 14px;
+    line-height: 14px;
+    background-size: 13px;
+    background-position: left top;
+    line-height: 14px;
+    font-family: 'Gill Sans';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 12px; }
+    .ns-clv4 header .tm .opt span {
+      padding-left: 18px; }
 
 .ns-clv4 header .tm {
   position: absolute;

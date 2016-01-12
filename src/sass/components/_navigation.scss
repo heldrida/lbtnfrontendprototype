@@ -37,6 +37,24 @@
 		}
 
 		.tm {
+			margin-top: $top-corner-menu-margin / 3;
+
+			&.tl {
+				margin-left: $top-corner-menu-margin;
+
+				li:nth-child(1) {
+					margin-right: $top-corner-menu-margin / 2;
+				}
+			}
+
+			&.tr {
+				margin-right: $top-corner-menu-margin;
+
+				li:nth-child(2) {
+					margin: 0 ($top-corner-menu-margin / 2);
+				}
+			}
+
 			.opt {
 				display: inline-block;
 				width: auto;
