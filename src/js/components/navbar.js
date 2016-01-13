@@ -2,6 +2,8 @@ console.log('navbarjs loaded!');
 
 (function (App) {
 
+	"use strict";
+
 	function Navbar () {
 		this.init();
 	}

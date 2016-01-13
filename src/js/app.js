@@ -1,8 +1,8 @@
 /* global window, require, App */
 
-'use strict';
-
 (function () {
+
+	"use strict";
 
 	// The global App property
 	window.App = window.App || {};

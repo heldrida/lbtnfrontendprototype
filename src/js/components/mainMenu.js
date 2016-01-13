@@ -2,6 +2,8 @@ console.log('mainMenu.js loaded!');
 
 (function (App) {
 
+	"use strict";
+
 	function MainMenu (params) {
 		this.init(params);
 	}

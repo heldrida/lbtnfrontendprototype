@@ -2,6 +2,8 @@ console.log('button.js loaded!');
 
 (function (App) {
 
+	"use strict";
+
 	function Buttons () {
 		this.init();
 	}
