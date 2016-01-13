@@ -112,7 +112,7 @@ table {
     opacity: 0.8; }
 
 .ns-clv4 .hide, .ns-clv4 .hiden {
-  display: none; }
+  display: none !important; }
 
 .ns-clv4 header {
   background: #FFF;
@@ -276,6 +276,27 @@ table {
 
 .ns-clv4 header .menu-categories [data-category] {
   opacity: 0; }
+
+.ns-clv4 header .menu-categories {
+  margin-top: 75px; }
+  .ns-clv4 header .menu-categories > div {
+    width: auto;
+    display: inline-block; }
+  .ns-clv4 header .menu-categories .s-cat {
+    width: auto;
+    float: left;
+    text-align: left; }
+    .ns-clv4 header .menu-categories .s-cat h3 {
+      font-family: 'Gill Sans';
+      font-weight: 600;
+      font-style: normal;
+      text-transform: uppercase;
+      margin-bottom: 20px; }
+    .ns-clv4 header .menu-categories .s-cat ul li {
+      font-family: 'Gill Sans';
+      font-weight: lighter;
+      font-style: normal;
+      margin-bottom: 10px; }
 
 .ns-clv4 header .tm {
   position: absolute;
