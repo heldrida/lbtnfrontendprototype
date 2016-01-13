@@ -7,8 +7,11 @@ require('./introCredits.js');
 
 	"use strict";
 
-	// The global App property
+	// the global App property
 	window.App = window.App || {};
+
+	// set the main container property to the app object
+	App.container = document.querySelector('.ns-clv4');
 
 	// load the config object
 	var config = require('./config.js');
@@ -19,10 +22,10 @@ require('./introCredits.js');
 	var Helpers = require('./helpers.js');
 	var Globals = require('./globals.js');
 
-	// Set the helper obj to the App
+	// set the helper obj to the App
 	App.helpers = new Helpers();
 
-	// Load components
+	// load components
 	require('./components/all.js');
 
 }());

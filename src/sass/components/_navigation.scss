@@ -60,25 +60,35 @@
 					float: left;
 					text-transform: uppercase;
 					margin: 0 12px;
+					cursor: pointer;
+					position: relative;
+					top: 44px;
+
+					&.active {
+						color: $header-menu-text-hover-red;
+					}
+
+					&:hover {
+						span {
+							color: $header-menu-text-hover-red;
+						}
+					}
 
 					span {
 						font-family: 'Gill Sans';
 						font-weight: 600;
 						font-style: normal;
-						position: relative;
-						top: 44px;
+						//position: relative;
+						//top: 44px;
 						font-size: $font-nav-main-opt-sz;
 						letter-spacing: $font-nav-main-opt-sz * 0.1255;
 						line-height: $font-nav-main-opt-sz * 1.1825;
-						cursor: pointer;
 						@include transition(color $common-hover-duration $common-hover-easing);
-
-						&:hover {
-							color: $header-menu-text-hover-red;
-						}
+						pointer-events: none;
 					}
 
 					&.logo {
+						top: 0;
 						position: relative;
 					}
 				}
