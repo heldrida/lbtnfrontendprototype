@@ -45,6 +45,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 					}.bind(this),
 					onReverseComplete: function () {
 						this.header.classList.remove('drop-down-menu-open');
+						this.resetActiveItem();
 					}.bind(this)
 				});
 
