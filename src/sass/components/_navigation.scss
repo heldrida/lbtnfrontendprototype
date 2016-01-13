@@ -17,13 +17,13 @@
 		.header-logo-minimal {
 			position: absolute;
 			z-index: 1;
-			bottom: 24px;
+			bottom: 26px;
 			@include transform(translateX(-50%));
 			@include transition(none);
 
 			img {
-				width: 30px;
-				height: 35px;
+				width: 20px;
+				height: auto;
 				opacity: 0;
 				@include transform(scale(0));
 			}
