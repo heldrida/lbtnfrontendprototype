@@ -1,4 +1,4 @@
-console.log('button.js loaded!');
+console.log('%c buttons.js loaded!', 'background: #0C0; padding: 2px; color: #FFF');
 
 (function (App) {
 

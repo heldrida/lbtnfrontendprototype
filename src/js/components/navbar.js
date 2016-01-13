@@ -1,4 +1,4 @@
-console.log('navbarjs loaded!');
+console.log('%c navbar.js loaded!', 'background: #0C0; padding: 2px; color: #FFF');
 
 (function (App) {
 

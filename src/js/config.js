@@ -1,5 +1,11 @@
-"use strict";
+console.log('%c config.js loaded!', 'background: #0C0; padding: 2px; color: #FFF');
 
-var config = {};
+(function (App) {
 
-module.exports = Config;
+	"use strict";
+
+	var config = {}
+
+	module.exports = config;
+
+}(window.App));

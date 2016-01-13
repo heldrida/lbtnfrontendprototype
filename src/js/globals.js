@@ -1,3 +1,9 @@
-console.log('global.js loaded!!');
+console.log('%c globals.js loaded!', 'background: #0C0; padding: 2px; color: #FFF');
 
-require('./polyfills.js');
+(function (App) {
+
+	"use strict";
+
+	require('./polyfills');
+
+}(window.App));

@@ -10,6 +10,12 @@ require('./introCredits.js');
 	// The global App property
 	window.App = window.App || {};
 
+	// load the config object
+	var config = require('./config.js');
+
+	// place the config object into the App
+	App.config = config;
+
 	var Helpers = require('./helpers.js');
 	var Globals = require('./globals.js');
 

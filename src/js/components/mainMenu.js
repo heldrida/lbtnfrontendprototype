@@ -1,4 +1,4 @@
-console.log('mainMenu.js loaded!');
+console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #FFF');
 
 (function (App) {
 

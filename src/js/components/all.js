@@ -1,4 +1,4 @@
-console.log('all.js loaded!');
+console.log('%c all.js loaded!', 'background: #0C0; padding: 2px; color: #FFF');
 
 (function (App) {
 
@@ -21,6 +21,11 @@ console.log('all.js loaded!');
 		if (!App.hasOwnProperty(name)) {
 
 			App[name] = new componentsList[name]();
+
+			// displays in the console the status of the component for development only
+			if (typeof App[name] !== 'undefined') {
+				console.log('%c ' + name + ' component initialised!', 'background: #AEA; padding: 2px; color: #999');
+			}
 
 		} else {
 
