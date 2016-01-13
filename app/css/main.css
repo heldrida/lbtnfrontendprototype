@@ -132,6 +132,13 @@ table {
 .ns-clv4 header {
   text-align: center; }
   .ns-clv4 header .header-logo {
+    -webkit-transition: none;
+    -khtml-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+    opacity: 1;
     position: relative;
     z-index: 2; }
     .ns-clv4 header .header-logo img {
@@ -146,7 +153,13 @@ table {
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    -webkit-transition: none;
+    -khtml-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none; }
     .ns-clv4 header .header-logo-minimal img {
       width: 30px;
       height: 35px;
@@ -178,7 +191,15 @@ table {
           font-size: 11px;
           letter-spacing: 1.3805px;
           line-height: 13.0075px;
-          cursor: pointer; }
+          cursor: pointer;
+          -webkit-transition: color 0.3s ease-in-out;
+          -khtml-transition: color 0.3s ease-in-out;
+          -moz-transition: color 0.3s ease-in-out;
+          -ms-transition: color 0.3s ease-in-out;
+          -o-transition: color 0.3s ease-in-out;
+          transition: color 0.3s ease-in-out; }
+          .ns-clv4 header nav ul li span:hover {
+            color: #ED1E24; }
         .ns-clv4 header nav ul li.logo {
           position: relative; }
   .ns-clv4 header .tm {

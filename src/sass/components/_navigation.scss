@@ -3,6 +3,9 @@
 		text-align: center;
 
 		.header-logo {
+			@include transition(none);
+			opacity: 1;
+
 			img {
 				width: $header-logo-height;
 				height: $header-logo-height;
@@ -16,6 +19,7 @@
 			z-index: 1;
 			bottom: 24px;
 			@include transform(translateX(-50%));
+			@include transition(none);
 
 			img {
 				width: 30px;
@@ -61,6 +65,11 @@
 						letter-spacing: $font-nav-main-opt-sz * 0.1255;
 						line-height: $font-nav-main-opt-sz * 1.1825;
 						cursor: pointer;
+						@include transition(color $common-hover-duration $common-hover-easing);
+
+						&:hover {
+							color: $header-menu-text-hover-red;
+						}
 					}
 
 					&.logo {

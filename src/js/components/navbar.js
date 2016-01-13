@@ -2,80 +2,111 @@ console.log('navbarjs loaded!');
 
 (function (App) {
 
-	var header = document.querySelector('header'),
-		header_height = getComputedStyle(header).height.split('px')[0],
-		fixedClassName = 'minimize',
-		headerLogo = document.querySelector('.header-logo img'),
-		headerLogoMinimal = document.querySelector('.header-logo-minimal img'),
-		nav = document.querySelector('nav'),
-		topMenuList = header.querySelectorAll('.tm'),
-		topMenuLeftLiList = topMenuList[0].querySelectorAll('li'),
-		navOffset = '20px',
-		topMenuLeftRightOffset = '54px',
-		tl, tlPos;
+	function Navbar () {
+		this.init();
+	}
 
-	function stickyScroll(e) {
+	Navbar.prototype = {
+		init: function () {
+			this.setProperties();
+			this.setEventListeners();
+		},
 
-		fixNavbar(e);
+		setProperties: function () {
+			this.header = document.querySelector('header');
+			this.header_height = getComputedStyle(this.header).height.split('px')[0];
+			this.fixedClassName = 'minimize';
+			this.headerLogo = document.querySelector('.header-logo img');
+			this.headerLogoMinimal = document.querySelector('.header-logo-minimal img');
+			this.nav = document.querySelector('nav');
+			this.topMenuList = this.header.querySelectorAll('.tm');
+			this.topMenuLeftLiList = this.topMenuList[0].querySelectorAll('li');
+			this.navOffset = '20px';
+			this.topMenuLeftRightOffset = '54px';
+			this.tl;
+			this.tlPos;
+		},
 
-		if( window.pageYOffset > 1 ) {
-			if (typeof tl === 'undefined') {
-				setTimelineAnim();
+		setEventListeners: function () {
+
+			// Scroll handler to toggle classes.
+			window.addEventListener('scroll', this.stickyScroll.bind(this), false);
+
+		},
+
+		stickyScroll: function (e) {
+
+			this.fixNavbar(e);
+
+			if( window.pageYOffset > 1 ) {
+				if (typeof this.tl === 'undefined') {
+					this.setTimelineAnim();
+				} else {
+					this.tl.play();
+				}
+			}
+
+			if( window.pageYOffset < 1 ) {
+				if (typeof this.tl === 'undefined') {
+					this.setTimelineAnim();
+				} else {
+					this.tl.reverse();
+				}
+			}
+
+		},
+
+		fixNavbar: function (event) {
+
+			var y = window.pageYOffset,
+				maxY = 55,
+				vendorTransform = Modernizr.prefixed('transform');
+
+			if (y < maxY) {
+
+				this.header.style[vendorTransform] = 'translateY(' + (-y + 'px') + ')';
+
 			} else {
-				tl.play();
+
+				this.header.style[vendorTransform] = 'translateY(' + (-maxY) + 'px)';
+
 			}
-		}
 
-		if( window.pageYOffset < 1 ) {
-			if (typeof tl === 'undefined') {
-				setTimelineAnim();
-			} else {
-				tl.reverse();
+		},
+
+		setTimelineAnim: function () {
+
+			this.tl = new TimelineLite({
+				onStart: function () {
+					this.header.classList.add('minimized');
+				}.bind(this),
+				onReverseComplete: function () {
+					this.header.classList.remove('minimized');
+				}.bind(this)
+			});
+
+			this.tlPos = 0;
+			this.tl.to(this.headerLogo, 0.3, { scale: 0 }, this.tlPos);
+			this.tl.to(this.headerLogoMinimal, 0.3, { opacity: 1, scale: 1 }, 0.1);
+			this.tl.to(this.nav, 0.3, { css: { y: this.navOffset }}, this.tlPos);
+
+			for (var y = 0; y < this.topMenuLeftLiList.length; y++) {
+
+				this.tl.to(this.topMenuLeftLiList[y], 0.2, { css: { width: '16px' } }, 0.2);
+
 			}
-		}
-	}
 
-	function setTimelineAnim() {
+			for (var i = 0; i < this.topMenuList.length; i++) {
 
-		tl = new TimelineLite({
-			onStart: function () {
-				header.classList.add('minimized');
-			},
-			onReverseComplete: function () {
-				header.classList.remove('minimized');
+				this.tl.to(this.topMenuList[i], 0.3, { css: { y: this.topMenuLeftRightOffset }}, this.tlPos);
+
 			}
-		});
 
-		tlPos = 0;
-		tl.to(headerLogo, 0.3, { scale: 0 }, tlPos);
-		tl.to(headerLogoMinimal, 0.3, { opacity: 1, scale: 1 }, 0.1);
-		tl.to(nav, 0.3, { css: { y: navOffset }}, tlPos);
-
-		for (var y = 0; y < topMenuLeftLiList.length; y++) {
-			tl.to(topMenuLeftLiList[y], 0.2, { css: { width: '16px' } }, 0.2);
 		}
 
-		for (var i = 0; i < topMenuList.length; i++) {
-			tl.to(topMenuList[i], 0.3, { css: { y: topMenuLeftRightOffset }}, tlPos);
-		}
 
-	}
+	};
 
-	function fixNavbar(event) {
-
-		var y = window.pageYOffset,
-			maxY = 55,
-			vendorTransform = Modernizr.prefixed('transform');
-
-		if (y < maxY) {
-			header.style[vendorTransform] = 'translateY(' + (-y + 'px') + ')';
-		} else {
-			header.style[vendorTransform] = 'translateY(' + (-maxY) + 'px)';
-		}
-
-	}
-
-	// Scroll handler to toggle classes.
-	window.addEventListener('scroll', _.throttle(stickyScroll, 0), false);
+	module.exports = Navbar;
 
 }(window.App));

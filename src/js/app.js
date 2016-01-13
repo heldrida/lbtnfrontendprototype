@@ -2,7 +2,7 @@
 
 'use strict';
 
-(function appInit() {
+(function () {
 
 	// The global App property
 	window.App = window.App || {};
@@ -14,6 +14,6 @@
 	App.helpers = new Helpers();
 
 	// Load components
-	var Components = require('./components/all.js');
+	require('./components/all.js');
 
 }());
