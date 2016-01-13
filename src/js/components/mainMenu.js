@@ -17,7 +17,8 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			this.mainMenuOptList = document.querySelectorAll('li');
 			this.layerBottom = document.querySelector('header .layer-bottom');
 			this.menuDropDownContainer = document.querySelector('.menu-drop-down-container');
-			this.timelineDropdown;
+			this.timelineDropdown = undefined;
+			this.hasParentElement = App.helpers.hasParentElement;
 		},
 
 		setEventListeners: function () {
@@ -67,20 +68,10 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 		dropDownMenuStateHandler: function (e) {
 
-			var hasParentElement = function (el, parentEl) {
-				while (el.parentNode) {
-				    el = el.parentNode;
-				    if (el === parentEl) {
-				        return true;
-				    }
-				}
-				return false;
-			};
-
 			// close the drop down menu, if it's status is open and clicked outside the element
 			if (this.header.classList.contains('drop-down-menu-open')) {
 
-				if (!hasParentElement(e.target, this.menuDropDownContainer) && e.target !== this.menuDropDownContainer) {
+				if (!this.hasParentElement(e.target, this.menuDropDownContainer) && e.target !== this.menuDropDownContainer) {
 					this.timelineDropdown.reverse();
 				}
 
