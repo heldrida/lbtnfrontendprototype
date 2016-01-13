@@ -22,6 +22,10 @@ console.log('all.js loaded!');
 
 			App[name] = new componentsList[name]();
 
+		} else {
+
+			throw "Components intialisation error: Name collision detected, you're trying to initialise an object named after an existing property in the main App object, please fix!";
+
 		}
 
 	}

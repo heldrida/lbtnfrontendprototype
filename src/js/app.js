@@ -1,5 +1,8 @@
 /* global window, require, App */
 
+// intro credits displayed in the brower console
+require('./introCredits.js');
+
 (function () {
 
 	"use strict";
