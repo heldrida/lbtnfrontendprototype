@@ -42,6 +42,12 @@
 			}
 		}
 
+		&.drop-down-menu-open {
+			.layer-top {
+				border-bottom: 1px solid #EDEDED;
+			}
+		}
+
 		nav {
 			text-align: center;
 			display: inline-block;
