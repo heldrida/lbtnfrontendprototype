@@ -8,7 +8,7 @@
 
 			img {
 				width: $header-logo-height;
-				height: $header-logo-height;
+				height: auto;
 			}
 			position: relative;
 			z-index: 2;
@@ -44,7 +44,7 @@
 
 		&.drop-down-menu-open {
 			.layer-top {
-				border-bottom: 1px solid #EDEDED;
+				box-shadow: 0px 1px 2px #EDEDED;
 			}
 		}
 

@@ -151,8 +151,8 @@ table {
     position: relative;
     z-index: 2; }
     .ns-clv4 header .header-logo img {
-      width: 104px;
-      height: 104px; }
+      width: 146px;
+      height: auto; }
   .ns-clv4 header .header-logo-minimal {
     position: absolute;
     z-index: 1;
@@ -182,7 +182,7 @@ table {
   .ns-clv4 header.minimized .tl .opt > span {
     opacity: 0; }
   .ns-clv4 header.drop-down-menu-open .layer-top {
-    border-bottom: 1px solid #EDEDED; }
+    box-shadow: 0px 1px 2px #EDEDED; }
   .ns-clv4 header nav {
     text-align: center;
     display: inline-block; }
