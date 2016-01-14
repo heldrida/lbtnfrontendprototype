@@ -102,7 +102,7 @@
 				margin-left: $top-corner-menu-margin;
 
 				.opt > span {
-					@include transition(opacity 0.3s linear);
+					@include transition(opacity 0.1s linear);
 				}
 
 				li:nth-child(1) {

@@ -119,7 +119,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 		setEventListeners: function () {
 
 			_.forEach(this.mainMenuOptList, function(v, k) {
-				this.mainMenuOptList[k].addEventListener('click', this.menuOptionHandler.bind(this));
+				this.mainMenuOptList[k].addEventListener('click', _.throttle(this.menuOptionHandler.bind(this), 800));
 			}.bind(this));
 
 			document.body.addEventListener('click', this.dropDownMenuStateHandler.bind(this));
@@ -383,7 +383,7 @@ console.log('%c navbar.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 
 			for (var y = 0; y < this.topMenuLeftLiList.length; y++) {
 
-				this.tl.to(this.topMenuLeftLiList[y], 0.2, { css: { width: '16px' } }, 0.3);
+				this.tl.to(this.topMenuLeftLiList[y], 0.2, { css: { width: '16px' } }, 0.2);
 
 			}
 

@@ -95,7 +95,7 @@ console.log('%c navbar.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 
 			for (var y = 0; y < this.topMenuLeftLiList.length; y++) {
 
-				this.tl.to(this.topMenuLeftLiList[y], 0.2, { css: { width: '16px' } }, 0.3);
+				this.tl.to(this.topMenuLeftLiList[y], 0.2, { css: { width: '16px' } }, 0.2);
 
 			}
 
