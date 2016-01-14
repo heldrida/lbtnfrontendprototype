@@ -278,10 +278,14 @@ table {
   opacity: 0; }
 
 .ns-clv4 header .menu-categories {
-  margin-top: 75px; }
+  margin-top: 80px; }
   .ns-clv4 header .menu-categories > div {
     width: auto;
     display: inline-block; }
+    .ns-clv4 header .menu-categories > div > div {
+      margin-right: 50px; }
+      .ns-clv4 header .menu-categories > div > div:last-child {
+        margin-right: 0; }
   .ns-clv4 header .menu-categories .s-cat {
     width: auto;
     float: left;
@@ -291,12 +295,14 @@ table {
       font-weight: 600;
       font-style: normal;
       text-transform: uppercase;
-      margin-bottom: 20px; }
+      margin-bottom: 15px;
+      font-size: 11px; }
     .ns-clv4 header .menu-categories .s-cat ul li {
       font-family: 'Gill Sans';
       font-weight: lighter;
       font-style: normal;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      font-size: 12px; }
 
 .ns-clv4 header .tm {
   position: absolute;

@@ -25,6 +25,14 @@
 			> div {
 				width: auto;
 				display: inline-block;
+
+				> div {
+					margin-right: 50px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
 			}
 
 			.s-cat {
@@ -37,7 +45,8 @@
 					font-weight: 600;
 					font-style: normal;
 					text-transform: uppercase;
-					margin-bottom: 20px;
+					margin-bottom: 15px;
+					font-size: 11px;
 				}
 
 				ul {
@@ -46,6 +55,7 @@
 						font-weight: lighter;
 						font-style: normal;
 						margin-bottom: 10px;
+						font-size: 12px;
 					}
 				}
 			}
