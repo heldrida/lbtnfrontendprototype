@@ -302,6 +302,7 @@ console.log('%c navbar.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 			this.topMenuLeftRightOffset = '54px';
 			this.tl;
 			this.tlPos;
+			this.pageOffsetBreakpoint = 10;
 		},
 
 		setEventListeners: function () {
@@ -315,7 +316,7 @@ console.log('%c navbar.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 
 			this.fixNavbar(e);
 
-			if( window.pageYOffset > 1 ) {
+			if( window.pageYOffset > this.pageOffsetBreakpoint ) {
 				if (typeof this.tl === 'undefined') {
 					this.setTimelineAnim();
 				} else {
@@ -323,7 +324,7 @@ console.log('%c navbar.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 				}
 			}
 
-			if( window.pageYOffset < 1 ) {
+			if( window.pageYOffset < this.pageOffsetBreakpoint ) {
 				if (typeof this.tl === 'undefined') {
 					this.setTimelineAnim();
 				} else {
