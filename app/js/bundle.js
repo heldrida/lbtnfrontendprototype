@@ -113,6 +113,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			this.hasParentElement = App.helpers.hasParentElement;
 			this.menuCategories = this.menuDropDownContainer.querySelector('.menu-categories');
 			this.categoryMenus = document.querySelectorAll('.menu-categories [data-category]');
+			this.darkOverlay = document.querySelector('.dark-overlay');
 		},
 
 		setEventListeners: function () {
@@ -143,6 +144,10 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 					onStart: function () {
 						this.menuCategories.style.opacity = 1;
 						this.header.classList.add('drop-down-menu-open');
+						TweenLite.to(this.darkOverlay, 0.3, { opacity: 0.3, onStart: function () {
+								this.darkOverlay.style.display = 'block';
+							}.bind(this)
+						});
 					}.bind(this),
 
 					onReverseComplete: function () {
@@ -254,10 +259,18 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 		resetMenuCategoryHeight: function (callback) {
 
+			// hide the dark overlay first
+			TweenLite.to(this.darkOverlay, 0.3, { opacity: 0, onComplete: function () {
+					this.darkOverlay.style.display = '';
+				}.bind(this)
+			});
+
+			// hide the categories container
 			var tl = new TimelineLite();
 
 			tl.to(this.menuCategories, 0.3, { css: { opacity: 0 } });
 
+			// minimize the menu categories and then reverse timelineDropdown animation
 			tl.to(this.menuCategories, 0.3, { css: { height: '0px' }, onComplete: function () {
 					if (typeof callback === "function") {
 						callback.call(this);
