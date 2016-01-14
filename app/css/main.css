@@ -120,7 +120,8 @@ table {
   height: 90px;
   position: fixed;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 100; }
   .ns-clv4 header .layer {
     position: relative;
     width: 100%;
@@ -133,9 +134,9 @@ table {
 
 .ns-clv4 main {
   margin-top: 90px;
-  background: #000;
+  background: #FFF;
   width: 100%;
-  height: calc(300vh - 90px);
+  height: auto;
   overflow: hidden; }
 
 .ns-clv4 header {
@@ -181,8 +182,30 @@ table {
       transform: scale(0); }
   .ns-clv4 header.minimized .tl .opt > span {
     opacity: 0; }
+  .ns-clv4 header + main:before {
+    content: " ";
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity 0.3s;
+    -khtml-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
   .ns-clv4 header.drop-down-menu-open .layer-top {
     box-shadow: 0px 1px 2px #EDEDED; }
+  .ns-clv4 header.drop-down-menu-open + main {
+    position: relative;
+    z-index: 0; }
+    .ns-clv4 header.drop-down-menu-open + main:before {
+      opacity: 0.2; }
   .ns-clv4 header nav {
     text-align: center;
     display: inline-block; }
