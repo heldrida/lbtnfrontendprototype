@@ -19,6 +19,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			this.menuDropDownContainer = document.querySelector('.menu-drop-down-container');
 			this.timelineDropdown = undefined;
 			this.hasParentElement = App.helpers.hasParentElement;
+			this.menuCategories = this.menuDropDownContainer.querySelector('.menu-categories');
 			this.categoryMenus = document.querySelectorAll('.menu-categories [data-category]');
 
 		},
@@ -95,6 +96,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 				} else if (!this.hasParentElement(e.target, this.menuDropDownContainer) && e.target !== this.menuDropDownContainer) {
 
+					this.resetMenuCategoryHeight();
 					this.timelineDropdown.reverse();
 
 				}
@@ -114,6 +116,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			// and close the drop down container if in open state
 			if (!element) {
 
+				this.resetMenuCategoryHeight();
 				this.timelineDropdown.reverse();
 
 				return;
@@ -126,6 +129,10 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 					element.classList.remove('hiden');
 
+					setTimeout(function () {
+						TweenLite.to(this.menuCategories, 0.3, { css: { height: element.offsetHeight + 'px' } });
+					}.bind(this), 0);
+
 				}.bind(this),
 
 				onComplete: function () {
@@ -134,16 +141,26 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 			});
 
-			tl.to(element, 0.6, { opacity: 1 });
+			tl.to(element, 0.6, { opacity: 1 }, 0.8);
 
 		},
 
 		resetCategoryMenuVisibility: function () {
 
+			// fix height to avoid visual glitch
+			//this.menuCategories.style.height = this.menuCategories.offsetHeight + 'px';
+
 			_.forEach(this.categoryMenus, function (v, k) {
 				this.categoryMenus[k].classList.add('hiden');
 			}.bind(this));
 
+		},
+
+		resetMenuCategoryHeight: function () {
+
+			var tl = new TimelineLite();
+			//tl.to(this.menuCategories, 0.3, { css: { opacity: 0 } }, 0);
+			tl.to(this.menuCategories, 0.3, { css: { height: '0px' } });
 		}
 
 	};

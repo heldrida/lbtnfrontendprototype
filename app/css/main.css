@@ -272,16 +272,23 @@ table {
 .ns-clv4 header .menu-drop-down-container {
   width: 100%;
   height: auto;
-  padding: 40px 0; }
+  -webkit-transition: all 0.3s;
+  -khtml-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
 
 .ns-clv4 header .menu-categories [data-category] {
   opacity: 0; }
 
 .ns-clv4 header .menu-categories {
+  height: 0px;
   margin-top: 80px; }
   .ns-clv4 header .menu-categories > div {
     width: auto;
-    display: inline-block; }
+    display: inline-block;
+    padding: 40px 0; }
     .ns-clv4 header .menu-categories > div > div {
       margin-right: 50px; }
       .ns-clv4 header .menu-categories > div > div:last-child {

@@ -10,7 +10,7 @@
 		.menu-drop-down-container {
 			width: 100%;
 			height: auto;
-			padding: 40px 0;
+			@include transition(all 0.3s);
 		}
 
 		.menu-categories {
@@ -20,11 +20,13 @@
 		}
 
 		.menu-categories {
+			height: 0px;
 			margin-top: $header-drop-down-menu-top-offset;
 
 			> div {
 				width: auto;
 				display: inline-block;
+				padding: 40px 0;
 
 				> div {
 					margin-right: 50px;
