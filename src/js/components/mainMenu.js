@@ -21,7 +21,6 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			this.hasParentElement = App.helpers.hasParentElement;
 			this.menuCategories = this.menuDropDownContainer.querySelector('.menu-categories');
 			this.categoryMenus = document.querySelectorAll('.menu-categories [data-category]');
-
 		},
 
 		setEventListeners: function () {
@@ -50,6 +49,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 				this.timelineDropdown = new TimelineLite({
 					onStart: function () {
+						this.menuCategories.style.opacity = 1;
 						this.header.classList.add('drop-down-menu-open');
 					}.bind(this),
 
@@ -96,8 +96,11 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 				} else if (!this.hasParentElement(e.target, this.menuDropDownContainer) && e.target !== this.menuDropDownContainer) {
 
-					this.resetMenuCategoryHeight();
-					this.timelineDropdown.reverse();
+					var callback = function () {
+						this.timelineDropdown.reverse();
+					};
+
+					this.resetMenuCategoryHeight(callback);
 
 				}
 
@@ -116,8 +119,11 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			// and close the drop down container if in open state
 			if (!element) {
 
-				this.resetMenuCategoryHeight();
-				this.timelineDropdown.reverse();
+				var callback = function () {
+					this.timelineDropdown.reverse();
+				};
+
+				this.resetMenuCategoryHeight(callback);
 
 				return;
 
@@ -141,26 +147,32 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 			});
 
-			tl.to(element, 0.6, { opacity: 1 }, 0.8);
+			tl.to(element, 0.6, { opacity: 1 }, 0.4);
 
 		},
 
 		resetCategoryMenuVisibility: function () {
 
-			// fix height to avoid visual glitch
-			//this.menuCategories.style.height = this.menuCategories.offsetHeight + 'px';
-
 			_.forEach(this.categoryMenus, function (v, k) {
 				this.categoryMenus[k].classList.add('hiden');
+				this.categoryMenus[k].style.opacity = '';
 			}.bind(this));
 
 		},
 
-		resetMenuCategoryHeight: function () {
+		resetMenuCategoryHeight: function (callback) {
 
 			var tl = new TimelineLite();
-			//tl.to(this.menuCategories, 0.3, { css: { opacity: 0 } }, 0);
-			tl.to(this.menuCategories, 0.3, { css: { height: '0px' } });
+
+			tl.to(this.menuCategories, 0.3, { css: { opacity: 0 } });
+
+			tl.to(this.menuCategories, 0.3, { css: { height: '0px' }, onComplete: function () {
+					if (typeof callback === "function") {
+						callback.call(this);
+					}
+				}.bind(this)
+			}, 0.3);
+
 		}
 
 	};
