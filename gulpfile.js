@@ -1,3 +1,4 @@
+var config = require('./config');
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var browserify = require('browserify');
@@ -8,6 +9,7 @@ var bowerSrc = require('gulp-bower-src');
 var htmlReplace = require('gulp-html-replace');
 var replace = require('gulp-replace');
 var gulpFilter = require('gulp-filter');
+var DiffDeployer = require('ftp-diff-deployer');
 
 gulp.task('sass', function () {
 	return gulp.src('src/sass/**/*.scss')
@@ -57,6 +59,31 @@ gulp.task('build', ['bowerSrc'], function() {
 gulp.task('bowerSrc', function () {
 	bowerSrc()
 		.pipe(gulp.dest('./build/bower_components'));
+});
+
+gulp.task('deploy', function () {
+
+	var deployer = new DiffDeployer({
+		host: '216.70.112.70',
+		auth: {
+			username: config.ftp.username,
+			password: config.ftp.password
+		},
+		src: 'app',
+		dest: '/clv4',
+		memory: 'ftp-diff-deployer-memory-file.json',
+		exclude: ['node_modules']
+	});
+
+	deployer.deploy(function (err) {
+		if (err) {
+			console.error('Something went wrong!');
+			console.error(err);
+		} else {
+			console.log('Everything went fine!');
+		}
+	});
+
 });
 
 gulp.task('default', ['serve']);
