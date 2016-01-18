@@ -19,6 +19,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.1.1",
+    "mediator-js": "^0.9.9",
     "vinyl-source-stream": "^1.1.0"
   }
 }
