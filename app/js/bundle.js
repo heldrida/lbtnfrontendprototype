@@ -1096,6 +1096,8 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			this.menuCategories = this.menuDropDownContainer.querySelector('.menu-categories');
 			this.categoryMenus = document.querySelectorAll('.menu-categories [data-category]');
 			this.darkOverlay = document.querySelector('.dark-overlay');
+			this.discoveryModule = document.querySelector('.dd-bottom-discoveries');
+			this.discoveryModuleHeight = 176;
 		},
 
 		setEventListeners: function () {
@@ -1215,7 +1217,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 					element.classList.remove('hiden');
 
 					setTimeout(function () {
-						TweenLite.to(this.menuCategories, 0.3, { css: { height: element.offsetHeight + 'px' } });
+						TweenLite.to(this.menuCategories, 0.3, { css: { height: this.discoveryModuleHeight + element.offsetHeight + 'px' } });
 					}.bind(this), 0);
 
 				}.bind(this),
@@ -1227,6 +1229,8 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			});
 
 			tl.to(element, 0.6, { opacity: 1 }, 0.4);
+
+			tl.to(this.discoveryModule, 0.6, { opacity: 1 }, 0);
 
 		},
 
