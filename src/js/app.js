@@ -1,6 +1,6 @@
 /* global window, require, App */
 
-// intro credits displayed in the brower console
+// intro credits displayed in the browser console
 require('./introCredits.js');
 
 (function () {

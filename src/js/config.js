@@ -4,7 +4,7 @@ console.log('%c config.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 
 	"use strict";
 
-	var config = {}
+	var config = {};
 
 	module.exports = config;
 
