@@ -328,6 +328,8 @@ table {
       font-style: normal;
       margin-bottom: 10px;
       font-size: 12px; }
+    .ns-clv4 header .menu-categories .s-cat a {
+      color: #000; }
 
 .ns-clv4 header .tm {
   position: absolute;
