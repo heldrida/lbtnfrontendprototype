@@ -1196,6 +1196,8 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 			var element = this.menuDropDownContainer.querySelector('[data-category="' + category + '"]');
 
+			this.revealDiscoverModule(category);
+
 			// prevent running if element doesn't exist
 			// and close the drop down container if in open state
 			if (!element) {
@@ -1263,6 +1265,28 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 					}
 				}.bind(this)
 			}, 0.3);
+
+		},
+
+		revealDiscoverModule: function (category) {
+
+			this.discoveryModule.setAttribute('data-active-category', category);
+
+			// hide any existing module
+			var modules = this.discoveryModule.querySelectorAll('[data-category]');
+
+			_.forEach(modules, function (v, k) {
+				modules[k].classList.add('hiden');
+			}.bind(this));
+
+			// show active
+			var tl = new TimelineLite();
+			var module = this.discoveryModule.querySelector('[data-category="' + category +'"]');
+
+			// remove hiden class
+			module.classList.remove('hiden');
+
+			tl.to(module, 0.3, { css: { opacity: 1 } }, 0);
 
 		}
 

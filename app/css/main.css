@@ -298,6 +298,7 @@ table {
   transition: all 0.3s; }
   .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries {
     width: 100%;
+    height: 176px;
     position: absolute;
     bottom: 0;
     left: 0;
