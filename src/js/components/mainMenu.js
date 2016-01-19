@@ -23,6 +23,10 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			this.categoryMenus = document.querySelectorAll('.menu-categories [data-category]');
 			this.darkOverlay = document.querySelector('.dark-overlay');
 			this.discoveryModule = document.querySelector('.dd-bottom-discoveries');
+			this.discoverModuleCategories = this.discoveryModule.querySelectorAll('.discover');
+			this.discoverModuleCatsByName = _.map(this.discoverModuleCategories, function (node) {
+				return node.getAttribute('data-category');
+			});
 			this.discoveryModuleHeight = 176;
 		},
 
@@ -120,9 +124,20 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			// reset visibility of all category modules
 			this.resetCategoryMenuVisibility();
 
+			var hasDiscoverModule = this.discoverModuleCatsByName.indexOf(category) > -1;
+
 			var element = this.menuDropDownContainer.querySelector('[data-category="' + category + '"]');
 
-			this.revealDiscoverModule(category);
+			// only reveals the discover module if exists
+			if (hasDiscoverModule) {
+
+				this.revealDiscoverModule(category);
+
+			} else {
+
+				this.discoveryModule.setAttribute('data-active-category', '');
+
+			}
 
 			// prevent running if element doesn't exist
 			// and close the drop down container if in open state
@@ -138,6 +153,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 			}
 
+			// animation process
 			var tl = new TimelineLite({
 
 				onStart: function () {
@@ -145,7 +161,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 					element.classList.remove('hiden');
 
 					setTimeout(function () {
-						TweenLite.to(this.menuCategories, 0.3, { css: { height: this.discoveryModuleHeight + element.offsetHeight + 'px' } });
+						TweenLite.to(this.menuCategories, 0.3, { css: { height: (hasDiscoverModule ? this.discoveryModuleHeight : 0) + element.offsetHeight + 'px' } });
 					}.bind(this), 0);
 
 				}.bind(this),
@@ -196,11 +212,13 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 		revealDiscoverModule: function (category) {
 
-			this.discoveryModule.setAttribute('data-active-category', category);
-
 			// hide any existing module
 			var modules = this.discoveryModule.querySelectorAll('[data-category]');
 
+			// reset any previous active category
+			this.discoveryModule.setAttribute('data-active-category', '');
+
+			// reset visibility by hidding all
 			_.forEach(modules, function (v, k) {
 				modules[k].classList.add('hiden');
 			}.bind(this));
@@ -209,9 +227,18 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			var tl = new TimelineLite();
 			var module = this.discoveryModule.querySelector('[data-category="' + category +'"]');
 
+			// stop if module doesn't exist
+			if (typeof module === 'undefined' || !module) {
+				return;
+			}
+
+			// set active category
+			this.discoveryModule.setAttribute('data-active-category', category);
+
 			// remove hiden class
 			module.classList.remove('hiden');
 
+			// animation process
 			tl.to(module, 0.3, { css: { opacity: 1 } }, 0);
 
 		}

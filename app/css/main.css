@@ -361,6 +361,10 @@ table {
         overflow: hidden; }
         .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries ul > li .bg {
           height: 100%; }
+    .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries[data-active-category=""] {
+      display: none; }
+    .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries:not([data-active-category=""]) {
+      display: block; }
   .ns-clv4 header .menu-drop-down-container .discover div {
     width: 170px;
     text-align: left;

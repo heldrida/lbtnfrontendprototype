@@ -98,6 +98,14 @@
 						}
 					}
 				}
+
+				&[data-active-category=""] {
+					display: none;
+				}
+
+				&:not([data-active-category=""]) {
+					display: block;
+				}
 			}
 
 			.discover {
