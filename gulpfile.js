@@ -61,7 +61,7 @@ gulp.task('bowerSrc', function () {
 		.pipe(gulp.dest('./build/bower_components'));
 });
 
-gulp.task('deploy', function () {
+gulp.task('deploy', ['build'], function () {
 
 	var deployer = new DiffDeployer({
 		host: '216.70.112.70',

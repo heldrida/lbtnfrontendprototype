@@ -297,11 +297,13 @@ table {
   -o-transition: all 0.3s;
   transition: all 0.3s; }
   .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries {
+    width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
     opacity: 0;
-    padding: 0; }
+    padding: 0;
+    background-color: #E6E5E6; }
     .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries .col-2 ul > li {
       width: 50%; }
       .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries .col-2 ul > li:nth-child(1):after {
@@ -314,12 +316,51 @@ table {
         right: 0; }
     .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries .col-3 ul > li {
       width: 33.333333%; }
-    .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries ul > li {
-      position: relative;
-      height: 176px;
-      float: left; }
-      .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries ul > li .bg {
-        height: 100%; }
+    .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries ul {
+      max-width: 968px;
+      margin: 0 auto; }
+      .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries ul > li {
+        position: relative;
+        height: 176px;
+        float: left;
+        overflow: hidden; }
+        .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries ul > li .bg {
+          height: 100%; }
+  .ns-clv4 header .menu-drop-down-container .discover div {
+    width: 170px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    padding-right: 40px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -khtml-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    .ns-clv4 header .menu-drop-down-container .discover div h4 {
+      text-transform: uppercase; }
+    .ns-clv4 header .menu-drop-down-container .discover div p {
+      line-height: 16px; }
+    .ns-clv4 header .menu-drop-down-container .discover div h4, .ns-clv4 header .menu-drop-down-container .discover div a {
+      font-family: 'Gill Sans';
+      font-weight: 600; }
+    .ns-clv4 header .menu-drop-down-container .discover div h4, .ns-clv4 header .menu-drop-down-container .discover div p, .ns-clv4 header .menu-drop-down-container .discover div a {
+      font-size: 12px;
+      color: #000;
+      padding-bottom: 8px; }
+    .ns-clv4 header .menu-drop-down-container .discover div p {
+      font-size: 12px;
+      color: #999999;
+      font-family: 'Gill Sans';
+      font-weight: lighter; }
+    .ns-clv4 header .menu-drop-down-container .discover div a {
+      text-transform: capitalize;
+      text-decoration: underline;
+      margin-bottom: 0; }
   .ns-clv4 header .menu-drop-down-container[data-active="women"] .women {
     display: block; }
     .ns-clv4 header .menu-drop-down-container[data-active="women"] .women li:nth-child(1) {
