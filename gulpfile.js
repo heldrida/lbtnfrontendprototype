@@ -10,6 +10,8 @@ var htmlReplace = require('gulp-html-replace');
 var replace = require('gulp-replace');
 var gulpFilter = require('gulp-filter');
 var DiffDeployer = require('ftp-diff-deployer');
+var mandrill = require('node-mandrill')(config.mandrill.apiKey);
+var runSequence = require('run-sequence');
 
 gulp.task('sass', function () {
 	return gulp.src('src/sass/**/*.scss')
@@ -81,8 +83,45 @@ gulp.task('deploy', ['build'], function () {
 			console.error(err);
 		} else {
 			console.log('Everything went fine!');
+			runSequence('sendEmailNotification');
 		}
 	});
+
+});
+
+gulp.task('sendEmailNotification', function () {
+
+	var sendEmail = function () {
+
+		//send an e-mail
+		mandrill('/messages/send', {
+
+			message: {
+				to: config.email_notification.to,
+				from_name: config.email_notification.from_name,
+				from_email: config.email_notification.from_email,
+				subject: config.email_notification.subject,
+				html: config.email_notification.html
+			}
+
+		}, function (error, response) {
+
+			// error
+			if (error) {
+
+				console.log( JSON.stringify(error) );
+
+			} else {
+
+				console.log('Email notification sent!');
+
+			}
+
+		});
+
+	};
+
+	sendEmail();
 
 });
 
