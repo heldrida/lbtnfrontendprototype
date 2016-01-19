@@ -315,8 +315,42 @@ table {
         position: absolute;
         bottom: 0;
         right: 0; }
+    .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries .col-3 h4 {
+      font-family: 'Gill Sans', helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.24px;
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -khtml-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%); }
+    .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries .col-3 a {
+      color: #000; }
     .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries .col-3 ul > li {
       width: 33.333333%; }
+      .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries .col-3 ul > li:nth-child(2):before {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: #D9D9D9;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries .col-3 ul > li:nth-child(2):after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: #D9D9D9;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
     .ns-clv4 header .menu-drop-down-container .dd-bottom-discoveries ul {
       max-width: 968px;
       margin: 0 auto; }
