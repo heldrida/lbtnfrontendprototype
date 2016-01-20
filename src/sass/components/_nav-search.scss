@@ -6,10 +6,8 @@
 		}
 
 		&.focus {
-			fieldset {
-				&:before {
-					display: none;
-				}
+			.fk-caret {
+				display: none;
 			}
 		}
 
@@ -29,12 +27,12 @@
 				color: #000;
 			}
 
-			&:focus,
-			&:active,
-			&:hover {
+			&:focus {
 				@include placeholder {
-					display: none;
+					color: transparent;
 				}
+
+				outline: none;
 			}
 		}
 
@@ -45,14 +43,13 @@
 			width: 200px;
 			@include transform(translateX(-50%) translateY(-50%));
 
-			&:before {
-				content: " ";
+			.fk-caret {
 				height: 40px;
 				width: 1px;
 				background-color: #000;
 				position: absolute;
 				top: 50%;
-				left: 0;
+				left: 10px;
 				@include transform(translateY(-50%));
 			}
 		}

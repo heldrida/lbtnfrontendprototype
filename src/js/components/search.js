@@ -48,6 +48,7 @@ console.log('%c search.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 
 					onReverseComplete: function () {
 						this.header.classList.remove('drop-down-open');
+						this.resetPlaceholder();
 					}.bind(this)
 
 				});
@@ -92,6 +93,12 @@ console.log('%c search.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 		caretBlurHandler: function () {
 
 			this.searchContainer.classList.remove('focus');
+
+		},
+
+		resetPlaceholder: function () {
+
+			this.form.search.value = '';
 
 		}
 

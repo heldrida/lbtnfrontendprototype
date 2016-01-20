@@ -1,0 +1,10 @@
+@include keyframes(blink) {
+	50% {
+		opacity: 0;
+	}
+}
+
+
+.blink {
+	@include animation(blink 1s step-start 0s infinite);
+}

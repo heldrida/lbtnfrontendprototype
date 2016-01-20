@@ -21,6 +21,34 @@
  *		}
  *
  */
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0; } }
+
+@-moz-keyframes blink {
+  50% {
+    opacity: 0; } }
+
+@-ms-keyframes blink {
+  50% {
+    opacity: 0; } }
+
+@-o-keyframes blink {
+  50% {
+    opacity: 0; } }
+
+@keyframes blink {
+  50% {
+    opacity: 0; } }
+
+.blink {
+  -webkit-animation: blink 1s step-start 0s infinite;
+  -khtml-animation: blink 1s step-start 0s infinite;
+  -moz-animation: blink 1s step-start 0s infinite;
+  -ms-animation: blink 1s step-start 0s infinite;
+  -o-animation: blink 1s step-start 0s infinite;
+  animation: blink 1s step-start 0s infinite; }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -484,7 +512,7 @@ table {
   height: 100%;
   position: relative; }
 
-.ns-clv4 .search-container.focus fieldset:before {
+.ns-clv4 .search-container.focus .fk-caret {
   display: none; }
 
 .ns-clv4 .search-container input {
@@ -506,14 +534,16 @@ table {
     color: #000; }
   .ns-clv4 .search-container input:-ms-input-placeholder {
     color: #000; }
-  .ns-clv4 .search-container input:focus::-webkit-input-placeholder, .ns-clv4 .search-container input:active::-webkit-input-placeholder, .ns-clv4 .search-container input:hover::-webkit-input-placeholder {
-    display: none; }
-  .ns-clv4 .search-container input:focus:-moz-placeholder, .ns-clv4 .search-container input:active:-moz-placeholder, .ns-clv4 .search-container input:hover:-moz-placeholder {
-    display: none; }
-  .ns-clv4 .search-container input:focus::-moz-placeholder, .ns-clv4 .search-container input:active::-moz-placeholder, .ns-clv4 .search-container input:hover::-moz-placeholder {
-    display: none; }
-  .ns-clv4 .search-container input:focus:-ms-input-placeholder, .ns-clv4 .search-container input:active:-ms-input-placeholder, .ns-clv4 .search-container input:hover:-ms-input-placeholder {
-    display: none; }
+  .ns-clv4 .search-container input:focus {
+    outline: none; }
+    .ns-clv4 .search-container input:focus::-webkit-input-placeholder {
+      color: transparent; }
+    .ns-clv4 .search-container input:focus:-moz-placeholder {
+      color: transparent; }
+    .ns-clv4 .search-container input:focus::-moz-placeholder {
+      color: transparent; }
+    .ns-clv4 .search-container input:focus:-ms-input-placeholder {
+      color: transparent; }
 
 .ns-clv4 .search-container fieldset {
   position: absolute;
@@ -526,14 +556,13 @@ table {
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%); }
-  .ns-clv4 .search-container fieldset:before {
-    content: " ";
+  .ns-clv4 .search-container fieldset .fk-caret {
     height: 40px;
     width: 1px;
     background-color: #000;
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 10px;
     -webkit-transform: translateY(-50%);
     -khtml-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
