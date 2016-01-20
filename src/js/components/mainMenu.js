@@ -123,6 +123,20 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			// if the dd menu is open and different category selection only change the dd menu options
 			if (this.header.classList.contains('drop-down-menu-open')) {
 
+				/*
+				if (e.toElement.classList.contains('icon-magnifier')) {
+
+					this.resetActiveItem();
+					this.resetMenuCategoryHeight();
+					this.header.classList.remove('drop-down-menu-open');
+					this.resetCategoryMenuVisibility();
+					this.discoveryModule.setAttribute('data-active-category', '');
+
+					return null;
+
+				}
+				*/
+
 				if (this.hasParentElement(e.target, this.mainMenu)) {
 
 					return null;
@@ -269,10 +283,6 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 			var locked = this.menuDropDownContainer.classList.contains('lock');
 			var isDropDownOption = typeof e !== 'undefined' && e.toElement.classList.contains('drop-down') && e.fromElement.classList.contains('drop-down') ? true : false;
-
-			//console.log('e', e);
-			console.log('locked: ' + locked + ', isDropDownOption: ' + isDropDownOption);
-			//console.log("e.toElement.classList.contains('drop-down') && e.fromElement.classList.contains('drop-down'): ", e.toElement.classList.contains('drop-down') && e.fromElement.classList.contains('drop-down'));
 
 			if (this.header.classList.contains('drop-down-menu-open') && !locked && !isDropDownOption) {
 

@@ -1,4 +1,18 @@
 .ns-clv4 {
+	header {
+		&.drop-down-menu-open {
+			.search-container {
+				display: none;
+			}
+		}
+
+		&.search-open {
+			.search-container {
+				display: block;
+			}
+		}
+	}
+
 	.search-container {
 		form {
 			height: 100%;

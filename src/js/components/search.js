@@ -20,6 +20,7 @@ console.log('%c search.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 			this.iconMagnifier = document.querySelector('header .icon-magnifier');
 			this.layerBottom = document.querySelector('header .layer-bottom');
 			this.containerHeight = '140px';
+			this.darkOverlay = document.querySelector('.dark-overlay');
 		},
 
 		setEventListeners: function () {
@@ -37,7 +38,12 @@ console.log('%c search.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 				this.timelineDropdown = new TimelineLite({
 
 					onStart: function () {
+						App.mediator.publish("open_nav_search");
 						this.header.classList.add('drop-down-open');
+						TweenLite.to(this.darkOverlay, 0.3, { opacity: 0.3, onStart: function () {
+								this.darkOverlay.style.display = 'block';
+							}.bind(this)
+						});
 					}.bind(this),
 
 					onComplete: function () {
@@ -75,8 +81,18 @@ console.log('%c search.js loaded!', 'background: #0C0; padding: 2px; color: #FFF
 
 				} else if (!this.hasParentElement(e.target, this.searchContainer) && e.target !== this.searchContainer) {
 
-					this.header.classList.remove('search-open');
-					this.timelineDropdown.reverse();
+					// hide the dark overlay first
+					TweenLite.to(this.darkOverlay, 0.3, { opacity: 0, onComplete: function () {
+							this.darkOverlay.style.display = '';
+						}.bind(this)
+					});
+
+					setTimeout(function () {
+
+						this.header.classList.remove('search-open');
+						this.timelineDropdown.reverse();
+
+					}.bind(this), 150);
 
 				}
 

@@ -25,24 +25,13 @@ require('./introCredits.js');
 	// set the helper obj to the App
 	App.helpers = new Helpers();
 
-	// load components
-	require('./components/all.js');
-
-	/*
-	// load event management library (implement the mediator pattern)
+	// load event management
 	var Mediator = require( 'mediator-js' ).Mediator;
 
 	// place the mediator in the app attr
 	App.mediator = new Mediator;
 
-		Mediator usage
-	App.mediator.subscribe("wat", function(param1, param2){ console.log(param1, param2); });
-
-	setTimeout(function () {
-
-		App.mediator.publish("wat", 7, "hi", { one: 1 });
-
-	}.bind(this), 1000);
-	*/
+	// load components
+	require('./components/all.js');
 
 }());
