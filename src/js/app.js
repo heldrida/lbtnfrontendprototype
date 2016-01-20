@@ -28,13 +28,13 @@ require('./introCredits.js');
 	// load components
 	require('./components/all.js');
 
+	/*
 	// load event management library (implement the mediator pattern)
 	var Mediator = require( 'mediator-js' ).Mediator;
 
 	// place the mediator in the app attr
 	App.mediator = new Mediator;
 
-	/*
 		Mediator usage
 	App.mediator.subscribe("wat", function(param1, param2){ console.log(param1, param2); });
 

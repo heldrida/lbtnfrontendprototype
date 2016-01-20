@@ -42,6 +42,7 @@
 			}
 		}
 
+		&.drop-down-open,
 		&.drop-down-menu-open {
 			.layer-top {
 				box-shadow: 0px 1px 2px #EDEDED;
@@ -90,6 +91,7 @@
 					&.logo {
 						top: 0;
 						position: relative;
+						pointer-events: none;
 					}
 				}
 			}
@@ -122,7 +124,7 @@
 					margin: 0 ($top-corner-menu-margin / 2);
 				}
 
-				li + li {
+				li {
 					> a {
 						width: $top-corner-right-height;
 						height: $top-corner-right-height;

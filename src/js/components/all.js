@@ -6,12 +6,14 @@ console.log('%c all.js loaded!', 'background: #0C0; padding: 2px; color: #FFF');
 	var Navbar = require('./navbar.js');
 	var Buttons = require('./buttons.js');
 	var MainMenu = require('./mainMenu.js');
+	var Search = require('./search.js');
 
 	// create collection of component variables
 	var componentsList = {
 		'Navbar': Navbar,
 		'MainMenu': MainMenu,
-		'Buttons': Buttons
+		'Buttons': Buttons,
+		'Search': Search
 	};
 
 	// iterate and initialise collection of components
