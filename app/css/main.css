@@ -508,6 +508,12 @@ table {
   .ns-clv4 header .tm.tr {
     right: 0; }
 
+.ns-clv4 header.drop-down-menu-open .search-container {
+  display: none; }
+
+.ns-clv4 header.search-open .search-container {
+  display: block; }
+
 .ns-clv4 .search-container form {
   height: 100%;
   position: relative; }
