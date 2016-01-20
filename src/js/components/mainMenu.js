@@ -36,6 +36,28 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 				this.mainMenuOptList[k].addEventListener('click', _.throttle(this.menuOptionHandler.bind(this), 800));
 			}.bind(this));
 
+			_.forEach(this.mainMenuOptList, function(v, k) {
+				this.mainMenuOptList[k].addEventListener('mouseenter', _.throttle(this.menuOptionHandler.bind(this), 800));
+			}.bind(this));
+
+			_.forEach(this.mainMenuOptList, function(v, k) {
+				this.mainMenuOptList[k].addEventListener('mouseout', _.debounce(this.menuMouseLeaveHandler.bind(this), 800));
+			}.bind(this));
+
+			this.menuDropDownContainer.addEventListener('mouseenter', function () {
+				this.menuDropDownContainer.classList.add('lock');
+			}.bind(this));
+
+			this.menuDropDownContainer.addEventListener('mouseleave', function () {
+				this.menuDropDownContainer.classList.remove('lock');
+				this.menuMouseLeaveHandler();
+			}.bind(this));
+
+			this.header.addEventListener('mouseenter', function () {
+				this.menuDropDownContainer.classList.remove('lock');
+				this.menuMouseLeaveHandler();
+			}.bind(this));
+
 			document.body.addEventListener('click', this.dropDownMenuStateHandler.bind(this));
 
 		},
@@ -240,6 +262,27 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 
 			// animation process
 			tl.to(module, 0.3, { css: { opacity: 1 } }, 0);
+
+		},
+
+		menuMouseLeaveHandler: function (e) {
+
+			var locked = this.menuDropDownContainer.classList.contains('lock');
+			var isDropDownOption = typeof e !== 'undefined' && e.toElement.classList.contains('drop-down') && e.fromElement.classList.contains('drop-down') ? true : false;
+
+			//console.log('e', e);
+			console.log('locked: ' + locked + ', isDropDownOption: ' + isDropDownOption);
+			//console.log("e.toElement.classList.contains('drop-down') && e.fromElement.classList.contains('drop-down'): ", e.toElement.classList.contains('drop-down') && e.fromElement.classList.contains('drop-down'));
+
+			if (this.header.classList.contains('drop-down-menu-open') && !locked && !isDropDownOption) {
+
+				var callback = function () {
+					this.timelineDropdown.reverse();
+				};
+
+				this.resetMenuCategoryHeight(callback);
+
+			}
 
 		}
 
