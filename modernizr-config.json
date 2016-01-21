@@ -17,6 +17,9 @@
     "setClasses"
   ],
   "feature-detects": [
-    "test/dom/classlist"
+    "test/flash",
+    "test/video",
+    "test/css/animations",
+	"test/css/calc"
   ]
 }
