@@ -35,7 +35,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 			_.forEach(this.mainMenuOptList, function(v, k) {
 				this.mainMenuOptList[k].addEventListener('click', _.throttle(this.menuOptionHandler.bind(this), 800));
 			}.bind(this));
-
+			/*
 			_.forEach(this.mainMenuOptList, function(v, k) {
 				this.mainMenuOptList[k].addEventListener('mouseenter', _.throttle(this.menuOptionHandler.bind(this), 800));
 			}.bind(this));
@@ -57,7 +57,7 @@ console.log('%c mainMenu.js loaded!', 'background: #0C0; padding: 2px; color: #F
 				this.menuDropDownContainer.classList.remove('lock');
 				this.menuMouseLeaveHandler();
 			}.bind(this));
-
+			*/
 			document.body.addEventListener('click', this.dropDownMenuStateHandler.bind(this));
 
 		},
