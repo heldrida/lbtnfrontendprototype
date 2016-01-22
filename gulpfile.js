@@ -132,7 +132,7 @@ gulp.task('sync', function () {
 	var rsync = new Rsync()
 		.flags('va')
 		.source('./')
-		.destination('../../louboutin/lbtn_v5');
+		.destination('../../louboutin/clv5');
 
 	// Execute the command
 	rsync.execute(function(error, code, cmd) {
