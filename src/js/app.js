@@ -11,7 +11,7 @@ require('./introCredits.js');
 	window.App = window.App || {};
 
 	// set the main container property to the app object
-	App.container = document.querySelector('.ns-clv4');
+	App.container = document.querySelector('.ns-clv5');
 
 	// load the config object
 	var config = require('./config.js');

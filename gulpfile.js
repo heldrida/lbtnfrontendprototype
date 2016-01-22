@@ -12,6 +12,7 @@ var gulpFilter = require('gulp-filter');
 var DiffDeployer = require('ftp-diff-deployer');
 var mandrill = require('node-mandrill')(config.mandrill.apiKey);
 var runSequence = require('run-sequence');
+var Rsync = require('rsync');
 
 gulp.task('sass', function () {
 	return gulp.src('src/sass/**/*.scss')
@@ -72,7 +73,7 @@ gulp.task('deploy', ['build'], function () {
 			password: config.ftp.password
 		},
 		src: 'app',
-		dest: '/clv4',
+		dest: '/clv5',
 		memory: 'ftp-diff-deployer-memory-file.json',
 		exclude: ['node_modules']
 	});
@@ -122,6 +123,17 @@ gulp.task('sendEmailNotification', function () {
 	};
 
 	sendEmail();
+
+});
+
+gulp.task('sync', function () {
+
+	// Build the command
+	var rsync = new Rsync()
+		.flags('va')
+		.source('./')
+		.destination('../../louboutin/lbtn_v5');
+
 
 });
 
