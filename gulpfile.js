@@ -134,6 +134,10 @@ gulp.task('sync', function () {
 		.source('./')
 		.destination('../../louboutin/lbtn_v5');
 
+	// Execute the command
+	rsync.execute(function(error, code, cmd) {
+		console.log('Rsync is complete!');
+	});
 
 });
 
